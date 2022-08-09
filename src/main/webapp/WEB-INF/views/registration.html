@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>New User</title>
+</head>
+<body>
+<h1>Create an account</h1>
+<hr>
+<form method="POST" th:action="@{/new}" th:object="${user}">
+	<div>
+		<label for="login">Login</label>
+		<input type="text" th:field="*{login}" id="login">
+		<div style="color:red" th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Login error</div>
+		<br><br>
+		<label for="password">Password</label>
+		<input type="text" th:field="*{password}" id="password">
+		<div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</div>
+		<br><br>
+		<input type="submit" value="Create an account"/>
+	</div>
+</form>
+
+</body>
+</html>
