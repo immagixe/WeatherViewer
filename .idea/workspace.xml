@@ -9,7 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12f10f39-bb2a-427c-b907-b2aabc40e315" name="Changes" comment="Add registration and authorization logic" />
+    <list default="true" id="12f10f39-bb2a-427c-b907-b2aabc40e315" name="Changes" comment="Add REST API">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/util/LocationAlreadyAddedValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/controllers/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/models/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/models/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/models/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/models/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/repositories/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/repositories/LocationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/LocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/SessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/util/LocationValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/util/LocationExistValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/locations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/locations.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -50,7 +64,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/Desktop/JavaProjects/TennisScore"
+    "last_opened_file_path": "C:/Users/User/Desktop/JavaProjects/SpringWebApp",
+    "spring.configuration.checksum": "c330352d125d3e9ac791e820b68295e2"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -58,6 +73,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views" />
+    </key>
+  </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.81">
     <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.immagixe.weatherviewer.MainTest" />
@@ -85,6 +105,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="rest-api | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api_1 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 8.5.81" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.81" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -95,7 +121,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="926225e6-e76a-4171-a0c0-b43c0b7ce6c8" />
+        <option name="BASE_DIRECTORY_NAME" value="cae0fc39-5db4-4e20-a4eb-3e7b5554325f" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -103,7 +129,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="53506" />
+        <option name="DEBUG_PORT" value="64844" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -175,10 +201,14 @@
     <list>
       <item itemvalue="Application.TestTinkoff" />
       <item itemvalue="Application.MainTest" />
+      <item itemvalue="HTTP Request.rest-api_1 | #1" />
+      <item itemvalue="HTTP Request.rest-api | #1" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.81" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.rest-api | #1" />
+        <item itemvalue="HTTP Request.rest-api_1 | #1" />
         <item itemvalue="Application.MainTest" />
         <item itemvalue="Application.TestTinkoff" />
       </list>
@@ -193,7 +223,11 @@
       <option name="presentableId" value="Default" />
       <updated>1659856663767</updated>
       <workItem from="1659856665839" duration="29248000" />
-      <workItem from="1659958293034" duration="52667000" />
+      <workItem from="1659958293034" duration="64197000" />
+      <workItem from="1660208324168" duration="9212000" />
+      <workItem from="1660238584460" duration="2430000" />
+      <workItem from="1660245602123" duration="8397000" />
+      <workItem from="1660321736618" duration="33691000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1660037190879</created>
@@ -209,7 +243,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660071959405</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add registration and authorization logic">
+      <created>1660072706031</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660072706031</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add REST API">
+      <created>1660339041657</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660339041657</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +307,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Add registration and authorization logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add registration and authorization logic" />
+    <MESSAGE value="Add REST API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add REST API" />
   </component>
 </project>

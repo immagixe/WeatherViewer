@@ -1,13 +1,44 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Locations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Locations</title>
 </head>
 <body>
+<div th:insert="header :: authorization_bar"></div>
 Locations
+<form method="GET" th:action="@{/locations}" th:object="${location}">
+    <div>
+        <label for="name">Enter location name</label>
+        <input type="text" th:field="*{name}" id="name">
+        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Login error</div>
+        <br><br>
+        <input type="submit" value="Find location"/>
+    </div>
+</form>
+
+<span th:text="${location.getName()}">Location name</span>
+<br>
+<span th:text="${location.getLatitude()}">Location latitude</span>
+<br>
+<span th:text="${location.getLongitude()}">Location longitude</span>
+
+<div th:if="${login != null}">
+    <form method="POST" th:action="@{/add}" th:object="${location}">
+<!--        <form method="POST" th:action="@{/add/{locationName}(locationName=${location.getName()})}" th:object="${location}">-->
+
+        <input type="hidden" th:field="*{name}"/>
+        <input type="hidden" th:field="*{latitude}"/>
+        <input type="hidden" th:field="*{longitude}"/>
+
+        <input type="submit" value="Add location"/>
+<!--        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Login error</div>-->
+
+    </form>
+</div>
+
 </body>
 </html>

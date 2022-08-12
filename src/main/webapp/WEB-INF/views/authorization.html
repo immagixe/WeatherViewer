@@ -8,6 +8,7 @@
 	<title>Authorization</title>
 </head>
 <body>
+<div th:insert="header :: authorization_bar"></div>
 <h1>Sign in</h1>
 <hr>
 <form method="POST" th:action="@{/login}" th:object="${user}">

@@ -1,7 +1,7 @@
 package org.immagixe.weatherviewer.util;
 
 import org.immagixe.weatherviewer.models.User;
-import org.immagixe.weatherviewer.services.UsersService;
+import org.immagixe.weatherviewer.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -10,11 +10,11 @@ import org.springframework.validation.Validator;
 @Component
 public class PasswordValidator implements Validator {
 
-    private final UsersService usersService;
+    private final UserService userService;
 
     @Autowired
-    public PasswordValidator(UsersService usersService) {
-        this.usersService = usersService;
+    public PasswordValidator(UserService userService) {
+        this.userService = userService;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class PasswordValidator implements Validator {
     public void validate(Object target, Errors errors) {
         User user = (User) target;
 
-        if (usersService.findByLoginAndPassword(user) == null) {
+        if (userService.findByLoginAndPassword(user) == null) {
             errors.rejectValue("password", "", "Login or password is incorrect");
         }
     }

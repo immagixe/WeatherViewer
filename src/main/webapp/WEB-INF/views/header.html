@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <header th:fragment="authorization_bar">
+        <div th:if="${login == null}">
+            <form method="GET" th:action="@{/new}">
+                <div>
+                    <input type="submit" value="Create an account"/>
+                </div>
+            </form>
+            <br><br>
+            <form method="GET" th:action="@{/login}">
+                <div>
+                    <input type="submit" value="Sign in"/>
+                </div>
+            </form>
+        </div>
+        <div th:unless="${login == null}">
+            <div>
+                <span th:text="'Your login: ' + ${login}"></span>
+            </div>
+            <br><br>
+            <form method="GET" th:action="@{/logout}">
+                <div>
+                    <input type="submit" value="Log out"/>
+                </div>
+            </form>
+        </div>
+    </header>
+</body>
+</html>

@@ -25,7 +25,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Location> locations;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -85,15 +85,5 @@ public class User {
 
         locations.add(location);
         location.setUser(this);
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", locations=" + locations +
-                '}';
     }
 }

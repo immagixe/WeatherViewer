@@ -1,6 +1,8 @@
 package org.immagixe.weatherviewer.services;
 
 import org.immagixe.weatherviewer.models.Location;
+import org.immagixe.weatherviewer.models.User;
+import org.immagixe.weatherviewer.openWeather.models.SearchResult;
 import org.immagixe.weatherviewer.repositories.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +22,22 @@ public class LocationService {
     @Transactional
     public void save (Location location) {
         locationRepository.save(location);
+    }
+
+    public Location findByNameAndUser(Location location) {
+        String locationName = location.getName();
+        User user = location.getUser();
+        return locationRepository.findByNameAndUser(locationName, user).orElse(null);
+    }
+
+    public Location setCoordinates(SearchResult searchResult, Location location) {
+        location.setLatitude(searchResult.getCoord().getLat());
+        location.setLongitude(searchResult.getCoord().getLon());
+        return location;
+    }
+
+    public Location setUser(User user, Location location) {
+        location.setUser(user);
+        return location;
     }
 }

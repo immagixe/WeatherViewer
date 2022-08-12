@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.Cookie;
 import java.sql.Timestamp;
 import java.util.UUID;
 
@@ -35,5 +36,35 @@ public class SessionService {
     public Session findById(String sessionUuid) {
         UUID uuid = UUID.fromString(sessionUuid);
         return sessionRepository.findById(uuid).orElse(null);
+    }
+
+    public boolean isExpired(String sessionUuid) {
+        if (sessionUuid.equals(""))
+            return true;
+
+        Session session = findById(sessionUuid);
+        Timestamp expiresAt = session.getExpiresAt();
+        Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());
+
+        return currentTimestamp.after(expiresAt);
+    }
+
+    public String getAuthorizedLogin (String sessionUuid) {
+        UUID uuid = UUID.fromString(sessionUuid);
+        Session session = sessionRepository.findById(uuid).orElse(null);
+
+        assert session != null;
+        return session.getUser().getLogin();
+    }
+
+    public User getUser (String sessionUuid) {
+        Session session = findById(sessionUuid);
+        return session.getUser();
+    }
+
+    public Cookie cleanCookie () {
+        Cookie cookie = new Cookie("session_id", "");
+        cookie.setMaxAge(0);
+        return cookie;
     }
 }

@@ -8,31 +8,17 @@
     <title>Main Page</title>
 </head>
 <body>
-<header>
-    <div th:if="${login == null}">
-        <form method="GET" th:action="@{/new}">
-            <div>
-                <input type="submit" value="Create an account"/>
-            </div>
-        </form>
+<div th:insert="header :: authorization_bar"></div>
+
+<form method="GET" th:action="@{/locations}" th:object="${location}">
+    <div>
+        <label for="name">Enter location name</label>
+        <input type="text" th:field="*{name}" id="name">
+        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Login error</div>
         <br><br>
-        <form method="GET" th:action="@{/login}">
-            <div>
-                <input type="submit" value="Sign in"/>
-            </div>
-        </form>
+        <input type="submit" value="Find location"/>
     </div>
-    <div th:unless="${login == null}">
-        <div>
-            <span th:text="'Your login: ' + ${login}"></span>
-        </div>
-        <br><br>
-        <form method="GET" th:action="@{/logout}">
-            <div>
-                <input type="submit" value="Log out"/>
-            </div>
-        </form>
-    </div>
-</header>
+</form>
+
 </body>
 </html>

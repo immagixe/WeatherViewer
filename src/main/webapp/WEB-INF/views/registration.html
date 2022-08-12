@@ -8,6 +8,9 @@
 	<title>New User</title>
 </head>
 <body>
+
+<div th:insert="header :: authorization_bar"></div>
+
 <h1>Create an account</h1>
 <hr>
 <form method="POST" th:action="@{/new}" th:object="${user}">

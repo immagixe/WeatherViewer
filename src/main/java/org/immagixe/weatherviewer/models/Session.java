@@ -54,12 +54,4 @@ public class Session {
     public void setExpiresAt(Timestamp expiresAt) {
         this.expiresAt = expiresAt;
     }
-
-    @Override
-    public String toString() {
-        return "Session{" +
-                "id=" + id +
-                ", expiresAt=" + expiresAt +
-                '}';
-    }
 }
