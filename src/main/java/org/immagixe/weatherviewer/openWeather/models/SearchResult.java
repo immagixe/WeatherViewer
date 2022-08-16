@@ -11,11 +11,4 @@ public class SearchResult {
     public void setCoord(Coordinates coord) {
         this.coord = coord;
     }
-
-    @Override
-    public String toString() {
-        return "SearchResult{" +
-                "coord=" + coord.toString() +
-                '}';
-    }
 }

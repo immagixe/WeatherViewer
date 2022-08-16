@@ -20,5 +20,15 @@
     </div>
 </form>
 
+<div th:if="${locationWeather != null}">
+    <div th:each="loc : ${locationWeather}">
+        <span th:text="${loc.getName() + ', ' + loc.getMain().getTemperature()}">Location</span>
+        <form th:method="DELETE" th:action="@{/delete}">
+            <input type="hidden" th:value="${loc.name}" name="locationToDelete"/>
+            <input type="submit" value="Delete location"/>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>

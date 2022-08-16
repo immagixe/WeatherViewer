@@ -28,15 +28,10 @@ Locations
 
 <div th:if="${login != null}">
     <form method="POST" th:action="@{/add}" th:object="${location}">
-<!--        <form method="POST" th:action="@{/add/{locationName}(locationName=${location.getName()})}" th:object="${location}">-->
-
         <input type="hidden" th:field="*{name}"/>
         <input type="hidden" th:field="*{latitude}"/>
         <input type="hidden" th:field="*{longitude}"/>
-
         <input type="submit" value="Add location"/>
-<!--        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Login error</div>-->
-
     </form>
 </div>
 

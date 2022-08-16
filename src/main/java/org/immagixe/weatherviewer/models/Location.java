@@ -1,7 +1,5 @@
 package org.immagixe.weatherviewer.models;
 
-import org.hibernate.annotations.Cascade;
-
 import javax.persistence.*;
 
 @Entity

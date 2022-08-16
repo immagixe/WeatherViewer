@@ -12,6 +12,8 @@ import org.springframework.web.client.RestTemplate;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class RestApiService {
@@ -24,14 +26,13 @@ public class RestApiService {
         RestTemplate restTemplate = new RestTemplate();
         String locationName = location.getName();
 
-        StringBuilder urlencoded = new StringBuilder(API_SERVICE);
-        urlencoded.append("?q=");
-        urlencoded.append(URLEncoder.encode(locationName, StandardCharsets.UTF_8));
-        urlencoded.append("&appid=");
-        urlencoded.append(URLEncoder.encode(APP_ID, StandardCharsets.UTF_8));
-        urlencoded.append("&units=");
-        urlencoded.append(URLEncoder.encode("metric", StandardCharsets.UTF_8));
-        URI uri = URI.create(urlencoded.toString());
+        String urlencoded = API_SERVICE + "?q=" +
+                URLEncoder.encode(locationName, StandardCharsets.UTF_8) +
+                "&appid=" +
+                URLEncoder.encode(APP_ID, StandardCharsets.UTF_8) +
+                "&units=" +
+                URLEncoder.encode("metric", StandardCharsets.UTF_8);
+        URI uri = URI.create(urlencoded);
 
         SearchResult response = null;
         try {
@@ -51,16 +52,15 @@ public class RestApiService {
         String latitude = String.valueOf(location.getLatitude());
         String longitude = String.valueOf(location.getLongitude());
 
-        StringBuilder urlencoded = new StringBuilder(API_SERVICE);
-        urlencoded.append("?lat=");
-        urlencoded.append(URLEncoder.encode(latitude, StandardCharsets.UTF_8));
-        urlencoded.append("&lon=");
-        urlencoded.append(URLEncoder.encode(longitude, StandardCharsets.UTF_8));
-        urlencoded.append("&appid=");
-        urlencoded.append(URLEncoder.encode(APP_ID, StandardCharsets.UTF_8));
-        urlencoded.append("&units=");
-        urlencoded.append(URLEncoder.encode("metric", StandardCharsets.UTF_8));
-        URI uri = URI.create(urlencoded.toString());
+        String urlencoded = API_SERVICE + "?lat=" +
+                URLEncoder.encode(latitude, StandardCharsets.UTF_8) +
+                "&lon=" +
+                URLEncoder.encode(longitude, StandardCharsets.UTF_8) +
+                "&appid=" +
+                URLEncoder.encode(APP_ID, StandardCharsets.UTF_8) +
+                "&units=" +
+                URLEncoder.encode("metric", StandardCharsets.UTF_8);
+        URI uri = URI.create(urlencoded);
 
         LocationWeather response = null;
         try {
@@ -70,5 +70,13 @@ public class RestApiService {
         }
 
         return response;
+    }
+
+    public List<LocationWeather> getLocationWeatherList(List<Location> locations) {
+        List<LocationWeather> locationWeatherList = new ArrayList<>();
+        for (Location location : locations) {
+            locationWeatherList.add(getWeatherByCoordinates(location));
+        }
+        return locationWeatherList;
     }
 }

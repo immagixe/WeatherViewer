@@ -1,6 +1,7 @@
 package org.immagixe.weatherviewer.openWeather.models;
 
 public class Temperature {
+
     private double temp;
 
     public double getTemp() {
@@ -11,10 +12,15 @@ public class Temperature {
         this.temp = temp;
     }
 
-    @Override
-    public String toString() {
-        return "Temperature{" +
-                "temp='" + temp + '\'' +
-                '}';
+    public String getTemperature() {
+        int temperature = (int) temp;
+
+        if (temperature > 0) {
+            return "+" + temperature;
+        } else if (temperature < 0) {
+            return "-" + temperature;
+        } else {
+            return String.valueOf(temperature);
+        }
     }
 }

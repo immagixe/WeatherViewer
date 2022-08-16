@@ -3,7 +3,6 @@ package org.immagixe.weatherviewer.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,7 +24,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Location> locations;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -79,11 +78,11 @@ public class User {
         this.sessions = sessions;
     }
 
-    public void addLocationToUser(Location location) {
-        if (locations == null)
-            locations = new ArrayList<>();
-
-        locations.add(location);
-        location.setUser(this);
+    public void deleteLocation(String locationName) {
+        Location locationToDelete = locations.stream()
+                .filter(loc -> loc.getName().equals(locationName))
+                .findAny()
+                .orElse(null);
+        locations.remove(locationToDelete);
     }
 }

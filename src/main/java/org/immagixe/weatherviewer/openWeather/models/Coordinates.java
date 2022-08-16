@@ -1,6 +1,7 @@
 package org.immagixe.weatherviewer.openWeather.models;
 
 public class Coordinates {
+
     private double lon;
     private double lat;
 
@@ -18,13 +19,5 @@ public class Coordinates {
 
     public void setLat(double lat) {
         this.lat = lat;
-    }
-
-    @Override
-    public String toString() {
-        return "Coordinates{" +
-                "lon='" + lon + '\'' +
-                ", lat='" + lat + '\'' +
-                '}';
     }
 }

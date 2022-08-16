@@ -2,12 +2,10 @@ package org.immagixe.weatherviewer.services;
 
 import org.immagixe.weatherviewer.models.User;
 import org.immagixe.weatherviewer.repositories.UserRepository;
+import org.immagixe.weatherviewer.util.BCryptPassword;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
@@ -20,18 +18,15 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public List<User> findAll () {
-        return userRepository.findAll();
-    }
-
-    public User findOne(int id) {
-         Optional<User> foundUser = userRepository.findById(id);
-         return foundUser.orElse(null);
+    @Transactional
+    public void save(User user) {
+        userRepository.save(user);
     }
 
     @Transactional
-    public void save (User user) {
-        userRepository.save(user);
+    public void deleteLocationFromList(User user, String locationName) {
+        user.deleteLocation(locationName);
+        save(user);
     }
 
     public User findByLogin(User user) {
@@ -41,8 +36,20 @@ public class UserService {
 
     public User findByLoginAndPassword(User user) {
         String login = user.getLogin();
-        String password = user.getPassword();
-        return userRepository.findByLoginAndPassword(login, password).orElse(null);
+        String originalPassword = user.getPassword();
+        String securedPasswordHash = getSecuredPasswordHashFromDB(user);
+
+        boolean matched = BCryptPassword.checkSecuredPassword(originalPassword, securedPasswordHash);
+        if (matched) {
+            return userRepository.findByLoginAndPassword(login, securedPasswordHash).orElse(null);
+        } else {
+            return null;
+        }
+    }
+
+    public String getSecuredPasswordHashFromDB(User user) {
+        User foundUser = findByLogin(user);
+        return foundUser.getPassword();
     }
 }
 

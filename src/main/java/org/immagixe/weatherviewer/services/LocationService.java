@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 public class LocationService {
@@ -17,6 +19,10 @@ public class LocationService {
     @Autowired
     public LocationService(LocationRepository locationRepository) {
         this.locationRepository = locationRepository;
+    }
+
+    public List<Location> getLocationList (User user) {
+        return locationRepository.findByUser(user);
     }
 
     @Transactional
@@ -30,14 +36,12 @@ public class LocationService {
         return locationRepository.findByNameAndUser(locationName, user).orElse(null);
     }
 
-    public Location setCoordinates(SearchResult searchResult, Location location) {
+    public void setCoordinates(SearchResult searchResult, Location location) {
         location.setLatitude(searchResult.getCoord().getLat());
         location.setLongitude(searchResult.getCoord().getLon());
-        return location;
     }
 
-    public Location setUser(User user, Location location) {
+    public void setUser(User user, Location location) {
         location.setUser(user);
-        return location;
     }
 }
