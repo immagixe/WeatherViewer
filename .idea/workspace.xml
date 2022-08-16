@@ -9,26 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12f10f39-bb2a-427c-b907-b2aabc40e315" name="Changes" comment="Add REST API">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/util/BCryptPassword.java" afterDir="false" />
+    <list default="true" id="12f10f39-bb2a-427c-b907-b2aabc40e315" name="Changes" comment="Add BCrypt Hash Generator">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data_for_sqlite.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/weatherviewer.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringMvcDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringMvcDispatcherServletInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/controllers/WeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/models/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/models/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/LocationWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/LocationWeather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/SearchResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/Temperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/Temperature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/repositories/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/repositories/LocationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/repositories/SessionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/repositories/SessionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/LocationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/locations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/locations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/util/BCryptPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/util/BCryptPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,17 +63,21 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/Desktop/JavaProjects/TimezoneConverter",
+    "last_opened_file_path": "C:/Users/User/Desktop/JavaProjects/WeatherViewer/src/main/resources",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "c330352d125d3e9ac791e820b68295e2"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "postgresql"
+      "postgresql",
+      "sqlite"
     ]
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views" />
     </key>
@@ -235,7 +232,7 @@
       <workItem from="1660238584460" duration="2430000" />
       <workItem from="1660245602123" duration="8397000" />
       <workItem from="1660321736618" duration="57899000" />
-      <workItem from="1660585173683" duration="8334000" />
+      <workItem from="1660585173683" duration="17701000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1660037190879</created>
@@ -272,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660394710018</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add BCrypt Hash Generator">
+      <created>1660636926712</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1660636926712</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +327,7 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Add registration and authorization logic" />
     <MESSAGE value="Add REST API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add REST API" />
+    <MESSAGE value="Add BCrypt Hash Generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add BCrypt Hash Generator" />
   </component>
 </project>

@@ -75,7 +75,8 @@ public class WeatherController {
         if (bindingResult.hasErrors())
             return "registration";
 
-        BCryptPassword.setSecuredPasswordHash(user);
+        String securedPassword = BCryptPassword.getSecuredPasswordHash(user.getPassword());
+        user.setPassword(securedPassword);
         userService.save(user);
         return "redirect:/";
     }
@@ -107,7 +108,7 @@ public class WeatherController {
         cookie.setMaxAge((int) (SessionService.SESSION_LIFE_TIME / 1000));
         response.addCookie(cookie);
 
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     @GetMapping("/logout")
@@ -167,7 +168,7 @@ public class WeatherController {
                                  HttpServletResponse response, Model model) {
         if (!sessionService.isExpired(sessionUuid)) {
             User user = sessionService.getUser(sessionUuid);
-            userService.deleteLocationFromList (user, locationName);
+            userService.deleteLocationFromList(user, locationName);
 
             model.addAttribute("login", sessionService.getAuthorizedLogin(sessionUuid));
             return "redirect:/";

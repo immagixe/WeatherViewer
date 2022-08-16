@@ -37,19 +37,16 @@ public class UserService {
     public User findByLoginAndPassword(User user) {
         String login = user.getLogin();
         String originalPassword = user.getPassword();
-        String securedPasswordHash = getSecuredPasswordHashFromDB(user);
-
-        boolean matched = BCryptPassword.checkSecuredPassword(originalPassword, securedPasswordHash);
-        if (matched) {
-            return userRepository.findByLoginAndPassword(login, securedPasswordHash).orElse(null);
-        } else {
-            return null;
-        }
-    }
-
-    public String getSecuredPasswordHashFromDB(User user) {
         User foundUser = findByLogin(user);
-        return foundUser.getPassword();
+
+        if (findByLogin(user) != null) {
+            String securedPasswordHash = foundUser.getPassword();
+            boolean matched = BCryptPassword.checkSecuredPassword(originalPassword, securedPasswordHash);
+            if (matched) {
+                return userRepository.findByLoginAndPassword(login, securedPasswordHash).orElse(null);
+            }
+        }
+        return null;
     }
 }
 
