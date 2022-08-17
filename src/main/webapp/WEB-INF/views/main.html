@@ -1,34 +1,67 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Main Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Weather Viewer</title>
 </head>
 <body>
 <div th:insert="header :: authorization_bar"></div>
 
-<form method="GET" th:action="@{/locations}" th:object="${location}">
-    <div>
-        <label for="name">Enter location name</label>
-        <input type="text" th:field="*{name}" id="name">
-        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Login error</div>
-        <br><br>
-        <input type="submit" value="Find location"/>
-    </div>
-</form>
-
-<div th:if="${locationWeather != null}">
-    <div th:each="loc : ${locationWeather}">
-        <span th:text="${loc.getName() + ', ' + loc.getMain().getTemperature()}">Location</span>
-        <form th:method="DELETE" th:action="@{/delete}">
-            <input type="hidden" th:value="${loc.name}" name="locationToDelete"/>
-            <input type="submit" value="Delete location"/>
+<nav class="navbar navbar-light bg-transparent mb-4">
+    <div class="container">
+        <form class="d-flex m-auto" method="GET" th:action="@{/locations}" th:object="${location}">
+            <input type="text" th:field="*{name}" id="name" class="form-control me-2"
+                   placeholder="Location" aria-label="Search">
+            <button class="btn btn-warning" type="submit">Search</button>
+            <div class="ms-2" style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Login error
+            </div>
         </form>
     </div>
-</div>
+</nav>
 
+<div class="container">
+    <div th:if="${locationWeather.size() > 0}">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <table class="table table-borderless table-responsive text-center">
+                    <thead>
+                    <tr>
+                        <th scope="col">Location</th>
+                        <th scope="col">Temperature,°C</th>
+                        <th scope="col">Humidity, %</th>
+                        <th scope="col">Wind speed, m/sec</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="loc : ${locationWeather}">
+                        <td class="align-middle" th:text="${loc.getName()}">Location</td>
+                        <td class="align-middle" th:text="${loc.getMain().getTemperature()}">Temperature</td>
+                        <td class="align-middle" th:text="${loc.getMain().getHumidity()}">Humidity</td>
+                        <td class="align-middle" th:text="${loc.getWind().getSpeed()}">Wind speed</td>
+                        <td class="align-middle">
+                            <form th:method="DELETE" th:action="@{/delete}">
+                                <input type="hidden" th:value="${loc.name}" name="locationToDelete"/>
+                                <button type="submit" class="btn btn-outline-danger">Delete location</button>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <form class="d-flex m-auto" th:method="DELETE" th:action="@{/deleteall}" th:object="${location}">
+                    <button class="btn btn-danger" type="submit">Delete all locations</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
 </body>
 </html>

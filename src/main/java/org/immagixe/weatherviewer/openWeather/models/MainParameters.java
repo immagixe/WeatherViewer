@@ -1,8 +1,17 @@
 package org.immagixe.weatherviewer.openWeather.models;
 
-public class Temperature {
+public class MainParameters {
 
     private double temp;
+    private int humidity;
+
+    public int getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(int humidity) {
+        this.humidity = humidity;
+    }
 
     public double getTemp() {
         return temp;

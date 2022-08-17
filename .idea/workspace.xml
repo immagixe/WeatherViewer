@@ -9,19 +9,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12f10f39-bb2a-427c-b907-b2aabc40e315" name="Changes" comment="Add BCrypt Hash Generator">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data_for_sqlite.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/weatherviewer.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="12f10f39-bb2a-427c-b907-b2aabc40e315" name="Changes" comment="Change data base from Postgresql to SQlite">
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/WindSpeed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/signin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/cloudy_weather.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/cloudy_weather_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/urban.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/weather.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/MainTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/controllers/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/LocationWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/LocationWeather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/Temperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/MainParameters.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/util/BCryptPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/util/BCryptPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data_for_sqlite.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data_for_sqlite.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/weatherviewer.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/weatherviewer.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/authorization.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/authorization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/locations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/locations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,13 +44,23 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringConfig.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/controllers/WeatherController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/authorization.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/locations.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -63,7 +85,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/Desktop/JavaProjects/WeatherViewer/src/main/resources",
+    "last_opened_file_path": "C:/Users/User/Desktop/JavaProjects/WeatherViewer/src/main/webapp/WEB-INF/views/css",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "c330352d125d3e9ac791e820b68295e2"
   },
@@ -76,10 +98,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\resources" />
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views\css" />
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\resources\img" />
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views\img" />
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views\mbdelete" />
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\resources\css" />
       <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\resources\img" />
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views\css" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.81">
@@ -96,23 +126,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTinkoff" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.immagixe.weatherviewer.TestTinkoff" />
-      <module name="WeatherViewer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.immagixe.weatherviewer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="rest-api | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="rest-api_1 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="main.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WeatherViewer/src/main/webapp/WEB-INF/views/main.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="test1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WeatherViewer/src/main/webapp/WEB-INF/views/test1.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 8.5.81" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.81" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -203,18 +226,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.TestTinkoff" />
       <item itemvalue="Application.MainTest" />
       <item itemvalue="HTTP Request.rest-api_1 | #1" />
       <item itemvalue="HTTP Request.rest-api | #1" />
+      <item itemvalue="JavaScript Debug.main.html" />
+      <item itemvalue="JavaScript Debug.test1.html" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.81" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainTest" />
-        <item itemvalue="HTTP Request.rest-api | #1" />
         <item itemvalue="HTTP Request.rest-api_1 | #1" />
-        <item itemvalue="Application.TestTinkoff" />
+        <item itemvalue="HTTP Request.rest-api | #1" />
+        <item itemvalue="JavaScript Debug.main.html" />
+        <item itemvalue="JavaScript Debug.test1.html" />
+        <item itemvalue="Application.MainTest" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +257,7 @@
       <workItem from="1660238584460" duration="2430000" />
       <workItem from="1660245602123" duration="8397000" />
       <workItem from="1660321736618" duration="57899000" />
-      <workItem from="1660585173683" duration="17701000" />
+      <workItem from="1660585173683" duration="61495000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1660037190879</created>
@@ -276,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660636926712</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Change data base from Postgresql to SQlite">
+      <created>1660660493347</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1660660493347</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +360,7 @@
     <MESSAGE value="Add registration and authorization logic" />
     <MESSAGE value="Add REST API" />
     <MESSAGE value="Add BCrypt Hash Generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add BCrypt Hash Generator" />
+    <MESSAGE value="Change data base from Postgresql to SQlite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change data base from Postgresql to SQlite" />
   </component>
 </project>

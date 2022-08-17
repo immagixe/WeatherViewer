@@ -78,7 +78,7 @@ public class WeatherController {
         String securedPassword = BCryptPassword.getSecuredPasswordHash(user.getPassword());
         user.setPassword(securedPassword);
         userService.save(user);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     @GetMapping("/login")
@@ -94,9 +94,11 @@ public class WeatherController {
     @PostMapping("/login")
     public String authorization(@ModelAttribute("user") @Valid User user,
                                 BindingResult bindingResult, HttpServletResponse response) {
+        // Проверка на корректность ввода
         if (bindingResult.hasErrors())
             return "authorization";
 
+        // Проверка на существование аккаунта, если первая проверка прошла успешно
         passwordValidator.validate(user, bindingResult);
         if (bindingResult.hasErrors())
             return "authorization";
@@ -169,6 +171,22 @@ public class WeatherController {
         if (!sessionService.isExpired(sessionUuid)) {
             User user = sessionService.getUser(sessionUuid);
             userService.deleteLocationFromList(user, locationName);
+
+            model.addAttribute("login", sessionService.getAuthorizedLogin(sessionUuid));
+            return "redirect:/";
+        } else {
+            response.addCookie(sessionService.cleanCookie());
+        }
+        return "redirect:/";
+    }
+
+    @DeleteMapping("/deleteall")
+    public String deleteAllLocations(@CookieValue(value = "session_id", defaultValue = "") String sessionUuid,
+                                     @ModelAttribute("locationToDelete") String locationName,
+                                     HttpServletResponse response, Model model) {
+        if (!sessionService.isExpired(sessionUuid)) {
+            User user = sessionService.getUser(sessionUuid);
+            userService.deleteAllLocations(user);
 
             model.addAttribute("login", sessionService.getAuthorizedLogin(sessionUuid));
             return "redirect:/";

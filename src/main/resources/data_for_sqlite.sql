@@ -8,7 +8,7 @@ create table users
 create table locations
 (
     id            INTEGER PRIMARY KEY AUTOINCREMENT,
-    location_name varchar(100),
+    location_name varchar(100) not null,
     user_id       INTEGER,
     latitude      decimal,
     longitude     decimal,
