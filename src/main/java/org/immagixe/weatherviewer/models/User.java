@@ -78,9 +78,9 @@ public class User {
         this.sessions = sessions;
     }
 
-    public void deleteLocation(String locationName) {
+    public void deleteLocation(int locationId) {
         Location locationToDelete = locations.stream()
-                .filter(loc -> loc.getName().equals(locationName))
+                .filter(loc -> loc.getId() == locationId)
                 .findAny()
                 .orElse(null);
         locations.remove(locationToDelete);

@@ -21,12 +21,12 @@ public class LocationService {
         this.locationRepository = locationRepository;
     }
 
-    public List<Location> getLocationList (User user) {
+    public List<Location> getLocationList(User user) {
         return locationRepository.findByUser(user);
     }
 
     @Transactional
-    public void save (Location location) {
+    public void save(Location location) {
         locationRepository.save(location);
     }
 

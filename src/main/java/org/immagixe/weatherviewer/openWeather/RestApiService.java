@@ -12,8 +12,9 @@ import org.springframework.web.client.RestTemplate;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 public class RestApiService {
@@ -71,11 +72,11 @@ public class RestApiService {
         return response;
     }
 
-    public List<LocationWeather> getLocationWeatherList(List<Location> locations) {
-        List<LocationWeather> locationWeatherList = new ArrayList<>();
-        for (Location location : locations) {
-            locationWeatherList.add(getWeatherByCoordinates(location));
-        }
-        return locationWeatherList;
+    public Map<Integer, LocationWeather> getLocationWeatherLinkedHashMap(List<Location> locations) {
+        return locations.stream()
+                .collect(Collectors.toMap(Location::getId, this::getWeatherByCoordinates, (v1, v2) -> {
+                    throw new IllegalStateException("Unexpected duplicate values:" + Arrays.asList(v1, v2));
+                }, LinkedHashMap::new));
     }
 }
+

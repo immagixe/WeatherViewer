@@ -9,31 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12f10f39-bb2a-427c-b907-b2aabc40e315" name="Changes" comment="Change data base from Postgresql to SQlite">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/WindSpeed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/signin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/cloudy_weather.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/cloudy_weather_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/urban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/weather.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/config/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/controllers/WeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/LocationWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/LocationWeather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/Temperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/models/MainParameters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data_for_sqlite.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data_for_sqlite.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/weatherviewer.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/weatherviewer.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/authorization.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/authorization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/locations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/locations.html" afterDir="false" />
+    <list default="true" id="12f10f39-bb2a-427c-b907-b2aabc40e315" name="Changes" comment="Fix work of deleteLocation method">
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +62,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/Desktop/JavaProjects/WeatherViewer/src/main/webapp/WEB-INF/views/css",
+    "last_opened_file_path": "C:/Users/User/Desktop/JavaProjects/WeatherViewer",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "c330352d125d3e9ac791e820b68295e2"
   },
@@ -98,11 +75,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer" />
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\resources" />
+      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\database" />
       <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views\css" />
       <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\resources\img" />
-      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views" />
-      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views\img" />
-      <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\JavaProjects\WeatherViewer\src\main\webapp\WEB-INF\views\mbdelete" />
@@ -235,11 +212,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainTest" />
         <item itemvalue="HTTP Request.rest-api_1 | #1" />
         <item itemvalue="HTTP Request.rest-api | #1" />
         <item itemvalue="JavaScript Debug.main.html" />
         <item itemvalue="JavaScript Debug.test1.html" />
-        <item itemvalue="Application.MainTest" />
       </list>
     </recent_temporary>
   </component>
@@ -257,7 +234,7 @@
       <workItem from="1660238584460" duration="2430000" />
       <workItem from="1660245602123" duration="8397000" />
       <workItem from="1660321736618" duration="57899000" />
-      <workItem from="1660585173683" duration="61495000" />
+      <workItem from="1660585173683" duration="79627000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1660037190879</created>
@@ -308,7 +285,49 @@
       <option name="project" value="LOCAL" />
       <updated>1660660493347</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add Bootstrap5 to project">
+      <created>1660767307124</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1660767307124</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix work of deleteLocation method">
+      <created>1660822294108</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1660822294108</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix work of deleteLocation method">
+      <created>1660823663125</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1660823663125</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fix work of deleteLocation method">
+      <created>1660824254452</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1660824254452</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fix work of deleteLocation method">
+      <created>1660824349171</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1660824349171</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fix work of deleteLocation method">
+      <created>1660824527082</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1660824527082</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,6 +380,8 @@
     <MESSAGE value="Add REST API" />
     <MESSAGE value="Add BCrypt Hash Generator" />
     <MESSAGE value="Change data base from Postgresql to SQlite" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change data base from Postgresql to SQlite" />
+    <MESSAGE value="Add Bootstrap5 to project" />
+    <MESSAGE value="Fix work of deleteLocation method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix work of deleteLocation method" />
   </component>
 </project>

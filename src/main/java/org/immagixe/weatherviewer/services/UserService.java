@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collection;
-
 @Service
 @Transactional(readOnly = true)
 public class UserService {
@@ -26,8 +24,8 @@ public class UserService {
     }
 
     @Transactional
-    public void deleteLocationFromList(User user, String locationName) {
-        user.deleteLocation(locationName);
+    public void deleteLocationFromList(User user, int locationId) {
+        user.deleteLocation(locationId);
         save(user);
     }
 

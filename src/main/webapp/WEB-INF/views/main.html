@@ -38,13 +38,13 @@
                     </thead>
                     <tbody>
                     <tr th:each="loc : ${locationWeather}">
-                        <td class="align-middle" th:text="${loc.getName()}">Location</td>
-                        <td class="align-middle" th:text="${loc.getMain().getTemperature()}">Temperature</td>
-                        <td class="align-middle" th:text="${loc.getMain().getHumidity()}">Humidity</td>
-                        <td class="align-middle" th:text="${loc.getWind().getSpeed()}">Wind speed</td>
+                        <td class="align-middle" th:text="${loc.getValue().getName()}">Location</td>
+                        <td class="align-middle" th:text="${loc.getValue().getMain().getTemperature()}">Temperature</td>
+                        <td class="align-middle" th:text="${loc.getValue().getMain().getHumidity()}">Humidity</td>
+                        <td class="align-middle" th:text="${loc.getValue().getWind().getSpeed()}">Wind speed</td>
                         <td class="align-middle">
                             <form th:method="DELETE" th:action="@{/delete}">
-                                <input type="hidden" th:value="${loc.name}" name="locationToDelete"/>
+                                <input type="hidden" th:value="${loc.getKey()}" name="locationToDelete"/>
                                 <button type="submit" class="btn btn-outline-danger">Delete location</button>
                             </form>
                         </td>

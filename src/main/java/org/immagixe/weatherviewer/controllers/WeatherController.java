@@ -19,6 +19,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class WeatherController {
@@ -49,7 +50,7 @@ public class WeatherController {
         if (!sessionUuid.equals("")) {
             User user = sessionService.getUser(sessionUuid);
             List<Location> locations = locationService.getLocationList(user);
-            List<LocationWeather> locationWeatherList = restApiService.getLocationWeatherList(locations);
+            Map<Integer, LocationWeather> locationWeatherList = restApiService.getLocationWeatherLinkedHashMap(locations);
 
             model.addAttribute("locationWeather", locationWeatherList);
             model.addAttribute("login", sessionService.getAuthorizedLogin(sessionUuid));
@@ -166,11 +167,11 @@ public class WeatherController {
 
     @DeleteMapping("/delete")
     public String deleteLocation(@CookieValue(value = "session_id", defaultValue = "") String sessionUuid,
-                                 @ModelAttribute("locationToDelete") String locationName,
+                                 @ModelAttribute("locationToDelete") int locationId,
                                  HttpServletResponse response, Model model) {
         if (!sessionService.isExpired(sessionUuid)) {
             User user = sessionService.getUser(sessionUuid);
-            userService.deleteLocationFromList(user, locationName);
+            userService.deleteLocationFromList(user, locationId);
 
             model.addAttribute("login", sessionService.getAuthorizedLogin(sessionUuid));
             return "redirect:/";
