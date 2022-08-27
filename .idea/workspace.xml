@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12f10f39-bb2a-427c-b907-b2aabc40e315" name="Changes" comment="Fix work of deleteLocation method">
+    <list default="true" id="12f10f39-bb2a-427c-b907-b2aabc40e315" name="Changes" comment="Add th:href in header.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/openWeather/RestApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/weatherviewer.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/weatherviewer.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/immagixe/weatherviewer/services/SessionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,6 +239,7 @@
       <workItem from="1660321736618" duration="57899000" />
       <workItem from="1660585173683" duration="61495000" />
       <workItem from="1661263663086" duration="4180000" />
+      <workItem from="1661623464556" duration="1754000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1660037190879</created>
@@ -289,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660660493347</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add th:href in header.html">
+      <created>1661623635920</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1661623635920</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +350,7 @@
     <MESSAGE value="Add REST API" />
     <MESSAGE value="Add BCrypt Hash Generator" />
     <MESSAGE value="Change data base from Postgresql to SQlite" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change data base from Postgresql to SQlite" />
+    <MESSAGE value="Add th:href in header.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add th:href in header.html" />
   </component>
 </project>

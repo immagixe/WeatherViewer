@@ -49,7 +49,7 @@ public class SessionService {
         return currentTimestamp.after(expiresAt);
     }
 
-    public String getAuthorizedLogin (String sessionUuid) {
+    public String getAuthorizedLogin(String sessionUuid) {
         UUID uuid = UUID.fromString(sessionUuid);
         Session session = sessionRepository.findById(uuid).orElse(null);
 
@@ -57,12 +57,12 @@ public class SessionService {
         return session.getUser().getLogin();
     }
 
-    public User getUser (String sessionUuid) {
+    public User getUser(String sessionUuid) {
         Session session = findById(sessionUuid);
         return session.getUser();
     }
 
-    public Cookie cleanCookie () {
+    public Cookie cleanCookie() {
         Cookie cookie = new Cookie("session_id", "");
         cookie.setMaxAge(0);
         return cookie;

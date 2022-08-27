@@ -8,10 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -26,12 +25,13 @@ public class RestApiService {
         RestTemplate restTemplate = new RestTemplate();
         String locationName = location.getName();
 
-        String urlencoded = API_SERVICE + "?q=" +
-                URLEncoder.encode(locationName, StandardCharsets.UTF_8) +
-                "&appid=" +
-                URLEncoder.encode(APP_ID, StandardCharsets.UTF_8) +
-                "&units=" +
-                URLEncoder.encode("metric", StandardCharsets.UTF_8);
+        String urlencoded = UriComponentsBuilder.fromHttpUrl(API_SERVICE)
+                .queryParam("q", locationName)
+                .queryParam("appid", APP_ID)
+                .queryParam("units", "metric")
+                .encode()
+                .toUriString();
+
         URI uri = URI.create(urlencoded);
 
         SearchResult response = null;
@@ -52,14 +52,14 @@ public class RestApiService {
         String latitude = String.valueOf(location.getLatitude());
         String longitude = String.valueOf(location.getLongitude());
 
-        String urlencoded = API_SERVICE + "?lat=" +
-                URLEncoder.encode(latitude, StandardCharsets.UTF_8) +
-                "&lon=" +
-                URLEncoder.encode(longitude, StandardCharsets.UTF_8) +
-                "&appid=" +
-                URLEncoder.encode(APP_ID, StandardCharsets.UTF_8) +
-                "&units=" +
-                URLEncoder.encode("metric", StandardCharsets.UTF_8);
+        String urlencoded = UriComponentsBuilder.fromHttpUrl(API_SERVICE)
+                .queryParam("lat", latitude)
+                .queryParam("lon", longitude)
+                .queryParam("appid", APP_ID)
+                .queryParam("units", "metric")
+                .encode()
+                .toUriString();
+
         URI uri = URI.create(urlencoded);
 
         LocationWeather response = null;
